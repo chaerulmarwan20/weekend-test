@@ -1,0 +1,10 @@
+@mixin typography(
+  $fontStyle: normal,
+  $lineHeight: normal,
+  $letterSpacing: normal
+) {
+  font-stretch: normal;
+  font-style: $fontStyle;
+  line-height: $lineHeight;
+  letter-spacing: $letterSpacing;
+}

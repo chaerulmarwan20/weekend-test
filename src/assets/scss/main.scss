@@ -1,0 +1,348 @@
+@import "fonts";
+@import "variables";
+@import "mixins";
+
+* {
+  font-family: "Work Sans", sans-serif;
+}
+
+body {
+  background-color: $primaryColor;
+}
+
+nav.custom-nav {
+  height: 67px;
+  background-color: $fourthColor;
+  position: relative;
+  z-index: 2;
+  .profile {
+    .img-user {
+      margin-right: 13px;
+    }
+    .title {
+      font-size: 12px;
+      font-weight: normal;
+      @include typography;
+      color: $secondaryColor;
+    }
+    .name {
+      font-size: 16px;
+      font-weight: bold;
+      @include typography;
+      color: $secondaryColor;
+    }
+  }
+}
+
+section.hero {
+  background-color: $primaryColor;
+  position: relative;
+  z-index: 1;
+  & {
+    @media screen and (max-width: 576px) {
+      background-image: url("../img/bg-mobile.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  }
+  .bg-hero {
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    z-index: -1;
+    & {
+      @media screen and (min-width: 1200px) {
+        transform: translateY(-65px);
+      }
+      @media screen and (max-width: 576px) {
+        display: none;
+      }
+    }
+  }
+  .desc {
+    margin-top: 84px;
+    & {
+      @media screen and (max-width: 576px) {
+        margin-top: 67px;
+      }
+    }
+    h1 {
+      font-size: 62px;
+      font-weight: 900;
+      text-transform: uppercase;
+      @include typography(normal, 0.82);
+      color: $fourthColor;
+      & {
+        @media screen and (max-width: 992px) {
+          font-size: 52px;
+          @include typography(normal, 0.98);
+        }
+      }
+    }
+    p {
+      font-size: 21px;
+      font-weight: 600;
+      @include typography(italic);
+      color: $fourthColor;
+      & {
+        @media screen and (max-width: 992px) {
+          font-size: 16px;
+        }
+      }
+    }
+    .btn-go {
+      width: 231px;
+      height: 58px;
+      border-radius: 29px;
+      border: inherit;
+      box-shadow: 0 20px 30px 0 rgba(249, 131, 171, 0.5);
+      background-color: $fourthColor;
+      font-size: 16px;
+      font-weight: normal;
+      @include typography;
+      color: $secondaryColor;
+      transform: translateY(-108px);
+      transition: 0.5s ease;
+      &:hover {
+        box-shadow: inherit;
+      }
+    }
+  }
+}
+
+section.desc {
+  background-color: $primaryColor;
+  padding-top: 152px;
+  padding-bottom: 197px;
+  position: relative;
+  & {
+    @media screen and (min-width: 1200px) {
+      margin-top: 50px;
+    }
+    @media screen and (max-width: 767px) {
+      margin-top: 0;
+    }
+    @media screen and (max-width: 576px) {
+      margin-top: 50px;
+    }
+  }
+  img.astronot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    & {
+      @media screen and (max-width: 576px) {
+        top: -70px;
+        z-index: 2;
+      }
+    }
+  }
+  p {
+    font-size: 21px;
+    font-weight: 500;
+    @include typography(normal, 1.52, -0.75px);
+    color: $secondaryColor;
+    & {
+      @media screen and (max-width: 992px) {
+        font-size: 16px;
+        @include typography(normal, 1.5, -0.57px);
+      }
+    }
+    span {
+      font-size: 21px;
+      font-weight: bold;
+      color: $thirdColor;
+      & {
+        @media screen and (max-width: 992px) {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+  figcaption {
+    font-size: 21px;
+    font-weight: 600;
+    @include typography(italic);
+    color: $fourthColor;
+    & {
+      @media screen and (max-width: 992px) {
+        font-size: 16px;
+      }
+    }
+  }
+  img.oval {
+    position: absolute;
+    bottom: 65px;
+    left: 150px;
+    & {
+      @media screen and (max-width: 767px) {
+        bottom: 91px;
+        left: 100px;
+      }
+    }
+  }
+}
+
+section.testimonial {
+  background-color: $secondaryColor;
+  .container {
+    transform: translateY(-110px);
+  }
+  h2 {
+    font-size: 32px;
+    font-weight: 900;
+    @include typography;
+    color: $fourthColor;
+  }
+  .carousel {
+    margin-top: 35px;
+  }
+  .item-carousel {
+    width: 247px;
+    height: 140px;
+    box-shadow: 0 -10px 20px 0 rgba(249, 131, 171, 0.2);
+    background-color: $fourthColor;
+    padding: 20px;
+    h3 {
+      font-size: 32px;
+      font-weight: 900;
+      @include typography;
+      color: $secondaryColor;
+    }
+    p {
+      font-size: 12px;
+      font-weight: normal;
+      @include typography(normal, normal, -0.43px);
+      color: $secondaryColor;
+    }
+  }
+  .rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 0px #fff;
+  }
+  .rec.rec-arrow:hover {
+    background-color: $thirdColor;
+    color: #fff;
+  }
+}
+
+section.pov-resource {
+  background-color: $secondaryColor;
+  margin-top: -1px;
+  h2 {
+    font-size: 32px;
+    font-weight: 900;
+    @include typography;
+    color: $fourthColor;
+  }
+  p {
+    font-size: 18px;
+    font-weight: normal;
+    @include typography(normal, 1.5, -0.64px);
+    color: $fourthColor;
+    & {
+      @media screen and (max-width: 992px) {
+        font-size: 16px;
+      }
+    }
+  }
+  .pov {
+    margin-top: -25px;
+  }
+  .resource {
+    margin-top: 67px;
+  }
+}
+
+section.help-tips {
+  background-color: $secondaryColor;
+  padding-top: 67px;
+  margin-top: -1px;
+  h2 {
+    font-size: 32px;
+    font-weight: 900;
+    @include typography;
+    color: $fourthColor;
+  }
+  .info-wrapper {
+    position: relative;
+    .path {
+      position: absolute;
+      top: -70px;
+      right: -45px;
+    }
+    .info {
+      position: relative;
+      z-index: 1;
+      .detail {
+        height: 72px;
+        position: absolute;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        p.title {
+          font-size: 16px;
+          font-weight: bold;
+          @include typography(normal, normal, -0.57px);
+          color: $fourthColor;
+          transform: translateY(6px);
+        }
+        a {
+          transition: 0.5s ease;
+          &:hover {
+            opacity: 0.6;
+          }
+        }
+      }
+    }
+  }
+  .set {
+    margin-top: 127px;
+    & {
+      @media screen and (max-width: 767px) {
+        margin-top: 67px;
+      }
+    }
+    p {
+      font-size: 18px;
+      font-weight: normal;
+      @include typography(normal, 1.5, -0.64px);
+      color: $fourthColor;
+    }
+  }
+  .astronot {
+    margin-top: -88px;
+    & {
+      @media screen and (max-width: 991px) {
+        margin-top: 50px;
+      }
+    }
+  }
+}
+
+footer {
+  height: 67px;
+  background-color: $thirdColor;
+  p {
+    font-family: WorkSans;
+    font-size: 16px;
+    font-weight: bold;
+    @include typography;
+    color: $fourthColor;
+    transform: translateY(10px);
+  }
+  .btn-alpha {
+    width: 126px;
+    height: 24px;
+    background-color: $thirdColor;
+    border-radius: 12px;
+    border: solid 1px $fourthColor;
+    font-size: 14px;
+    font-weight: 300;
+    @include typography;
+    color: $fourthColor;
+    transition: 0.5s ease;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+}
